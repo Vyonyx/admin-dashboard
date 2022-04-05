@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Fredricka';
+    src: url('assets/Fredericka_the_Great/FrederickatheGreat-Regular.ttf');
+}
+
+:root {
+    --main-bg-color: rgb(141, 208, 91);
+    --border-highlight: green;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -11,6 +21,13 @@
     height: 100vh;
     grid-template-columns: 350px 1fr;
     grid-template-rows: max-content 1fr;
+    gap: 10px;
+    margin: 10px;
+}
+
+.container > div {
+    border-left: 5px solid var(--border-highlight);
+    border-radius: 20px;
 }
 
 .header {
@@ -19,7 +36,7 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
-    background-color: blueviolet;
+    background-color: var(--main-bg-color);
 }
 
 .header > div {
@@ -43,6 +60,11 @@
     border-radius: 1rem;
 }
 
+.search-btn {
+    width: 30px;
+    height: 30px;
+}
+
 .project-buttons > button {
     color: black;
     background-color: white;
@@ -54,7 +76,7 @@
 }
 
 .side-bar {
-    background-color: rgb(141, 208, 91);
+    background-color: var(--main-bg-color);
     padding: 20px;
     grid-row: 1 / -1;
     display: grid;
@@ -70,16 +92,26 @@
     align-self: center;
 }
 
-.logo, .nav-option svg, .search .btn, .bell, .profile {
+.branding {
+    place-items: center;
+    grid-row: 1 / span 2;
+}
+
+.logo, .nav-option img, .search .btn, .bell, .profile {
     width: 50px;
     height: 50px;
     justify-self: right;
-    background-color: white;
 }
 
-.nav-option svg, .search .btn, .bell {
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.nav-option img, .search .btn, .bell {
     width: 30px;
     height: 30px;
+    background: none;
 }
 
 .search .btn, .bell, .profile {
@@ -87,7 +119,7 @@
 }
 
 .main-content {
-    background-color: brown;
+    background-color: var(--main-bg-color);
     padding: 20px;
 
     grid-column: 2 / -1;
@@ -107,9 +139,17 @@
 }
 
 .card {
-    background-color: lightgrey;
+    /* background-color: black; */
+    background-image: url('assets/blackboard.jpg');
+    background-repeat: no-repeat;
+    background-size: 500px;
     border-radius: 1rem;
-    border-left: 5px solid white;
+    border-left: 5px solid var(--border-highlight);
+    padding: 10px;
+}
+
+.card h3, .card p {
+    font-family: 'Fredricka';
 }
 
 .project-container h3 {
