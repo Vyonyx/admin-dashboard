@@ -39,7 +39,7 @@ body {
     grid-column: 2 / -1;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     background-color: var(--main-bg-color);
 }
 
@@ -74,6 +74,10 @@ body {
     height: 30px;
 }
 
+.search-btn:hover {
+    cursor: pointer;
+}
+
 .project-buttons > button {
     color: black;
     background-color: white;
@@ -106,7 +110,7 @@ body {
 }
 
 .side-bar h3 {
-    color: var(--highlight-color);
+    color: white;
 }
 
 .side-bar h3:hover {
@@ -153,6 +157,24 @@ body {
 
 .search .btn, .bell, .profile {
     border-radius: 1rem;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+.profile-main {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 3px solid white;
+}
+
+img {
+    max-width: 100%;
 }
 
 .main-content {
@@ -210,8 +232,28 @@ body {
     gap: 20px;
 }
 
+.alert-container div {
+    background-color: white;
+}
+
+.alert-container div h3, .alert-container div h2 {
+    color: black;
+}
+
+.alert div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert div + div {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid black;
+}
+
 .card h3 + h3, .card h2 + h3 {
-    border-top: 1px solid white;
+    border-top: 1px solid black;
     margin-top: 1rem;
     padding-top: 1rem;
 }
