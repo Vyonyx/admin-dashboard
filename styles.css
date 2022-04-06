@@ -4,8 +4,9 @@
 }
 
 :root {
-    --main-bg-color: rgb(141, 208, 91);
-    --border-highlight: green;
+    --main-bg-color: #10b981;
+    --highlight-color: #a7f3d0;
+    --border-highlight: #064e3b;
 }
 
 * {
@@ -13,20 +14,23 @@
     padding: 0px;
     box-sizing: border-box;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
+    color: var(--highlight-color);
+}
+
+body {
+    background-color: var(--border-highlight);
 }
 
 .container {
     display: grid;
-    height: 100vh;
     grid-template-columns: 350px 1fr;
     grid-template-rows: max-content 1fr;
-    gap: 10px;
+    gap: 10px 17px;
     margin: 10px;
 }
 
 .container > div {
-    border-left: 5px solid var(--border-highlight);
+    border-left: 5px solid var(--highlight-color);
     border-radius: 20px;
 }
 
@@ -51,6 +55,11 @@
     gap: 20px;
 }
 
+.header > div h3 {
+    font-family: 'Fredricka';
+    color: white;
+}
+
 .search .input-bar {
     width: 400px;
     height: 20px;
@@ -72,7 +81,13 @@
     width: 100px;
     border-radius: 1rem;
     border: none;
+}
 
+.project-buttons > button:hover {
+    font-weight: 600;
+    color: var(--highlight-color);
+    background-color: black;
+    cursor: pointer;
 }
 
 .side-bar {
@@ -82,6 +97,23 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit, 50px);
+    width: fit-content;
+}
+
+.side-bar * {
+    font-family: 'Fredricka';
+    color: var(--border-highlight);
+}
+
+.side-bar h3 {
+    color: var(--highlight-color);
+}
+
+.side-bar h3:hover {
+    color: black;
+    font-size: 1.5em;
+    transition-timing-function: ease-in;
+    cursor: pointer;
 }
 
 .branding, .nav-option {
@@ -95,6 +127,11 @@
 .branding {
     place-items: center;
     grid-row: 1 / span 2;
+    border-bottom: 1px solid white;
+}
+
+.branding * {
+    color: white;
 }
 
 .logo, .nav-option img, .search .btn, .bell, .profile {
@@ -130,6 +167,10 @@
     gap: 20px;
 }
 
+.main-content * {
+    color: white;
+}
+
 .project-container {
     grid-column-start: 1;
     display: grid;
@@ -139,17 +180,24 @@
 }
 
 .card {
-    /* background-color: black; */
-    background-image: url('assets/blackboard.jpg');
-    background-repeat: no-repeat;
-    background-size: 500px;
+    background-color: black;
     border-radius: 1rem;
-    border-left: 5px solid var(--border-highlight);
-    padding: 10px;
+    border-left: 5px solid var(--highlight-color);
+    padding: 20px;
 }
 
-.card h3, .card p {
+.card h3 {
     font-family: 'Fredricka';
+}
+
+.card p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card h3 + p {
+    border-top: 1px solid white;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
 }
 
 .project-container h3 {
@@ -160,4 +208,14 @@
     display: grid;
     grid-template-rows: max-content 1fr max-content 1fr;
     gap: 20px;
+}
+
+.card h3 + h3, .card h2 + h3 {
+    border-top: 1px solid white;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.card h2 {
+    font-size: 0.8rem;
 }
